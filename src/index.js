@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createStore} from 'redux';
+import allReducers from './reducers/index'
 
 //golobalize store
 
@@ -29,7 +30,8 @@ const Counter = (state = 0,action) =>{
   }
 }
 
-let store = createStore(Counter);
+// let store = createStore(Counter);
+const store = createStore(allReducers,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 
 //dispatch store to console
