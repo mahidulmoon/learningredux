@@ -38,7 +38,7 @@ const store = createStore(allReducers,window.__REDUX_DEVTOOLS_EXTENSION__ && win
 store.subscribe(() => console.log(store.getState()));
 
 //dispatch
-store.dispatch(Increment());
+//store.dispatch(Increment());
 
 ReactDOM.render(
   <React.StrictMode>
