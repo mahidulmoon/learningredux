@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createStore} from 'redux';
-import allReducers from './reducers/index'
+import allReducers from './reducers/index';
+import { Provider } from 'react-redux';
 
 //golobalize store
 
@@ -35,14 +36,16 @@ const store = createStore(allReducers,window.__REDUX_DEVTOOLS_EXTENSION__ && win
 
 
 //dispatch store to console
-store.subscribe(() => console.log(store.getState()));
+//store.subscribe(() => console.log(store.getState()));
 
 //dispatch
 //store.dispatch(Increment());
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
